@@ -9,6 +9,7 @@ library(ggplot2)
 library(caret)
 library(ISLR2)
 library(tidyverse)
+library(h2o)
 
 
 dat<-ISLR2::Boston%>%
@@ -21,7 +22,7 @@ shinyUI(fluidPage(
 
     
     # Application title
-    titlePanel("Non-Parametric Regression for Housing Data"),
+    titlePanel("Visualizing & Predicting Housing Data"),
     
   
     sidebarLayout(
@@ -54,7 +55,8 @@ shinyUI(fluidPage(
       mainPanel(
         
       plotOutput("Data2Plot"),
-      verbatimTextOutput("MSE_test")
+      verbatimTextOutput("MSE_test"),
+      verbatimTextOutput("STACKING_test")
         
   
       )
